@@ -7,7 +7,6 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 
-
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -118,9 +117,9 @@ public class MainUI extends UI implements Serializable {
         }
     }
 
-   
+   /*
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MainUI.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
-    }
+    public static class MyUIServlet extends  VaadinServlet{
+    }*/
 }

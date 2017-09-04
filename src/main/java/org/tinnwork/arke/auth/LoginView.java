@@ -26,7 +26,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 
 
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class LoginView extends VerticalLayout implements Serializable {
 
     CheckBox rememberMe = new CheckBox("Recuérdame");

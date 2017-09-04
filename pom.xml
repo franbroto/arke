@@ -86,6 +86,17 @@
 			<version>1.7.0</version>
 		</dependency>
 		
+		<dependency>
+    			<groupId>com.openshift</groupId>
+    			<artifactId>openshift-java-client</artifactId>
+    			<version>2.7.0.Final</version>
+		</dependency>
+		
+		        <dependency>
+            <groupId>org.jboss.logmanager</groupId>
+            <artifactId>jboss-logmanager</artifactId>
+            <version>2.0.7.Final</version>
+        </dependency>
 		
 	</dependencies>
 
@@ -105,6 +116,9 @@
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
 				<version>${vaadin.plugin.version}</version>
+				<configuration>
+                		<extraJvmArgs>-Djava.util.prefs.userRoot=~/app-root/data/.java/.systemPrefs</extraJvmArgs>
+                </configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -145,7 +159,34 @@
 					<scanIntervalSeconds>2</scanIntervalSeconds>
 				</configuration>
 			</plugin>
+			
+			
+			
+			<plugin>
+    				<groupId>org.codehaus.mojo</groupId>
+    				<artifactId>tomcat-maven-plugin</artifactId>
+    				<version>1.0-beta-1</version>
+			</plugin>
+	
+	
+	<plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>org.tinnwork.arke.MainUI</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </plugin>
+	
+	
+	
 		</plugins>
+		
+		
+		
 	</build>
 
 	<profiles>
@@ -189,6 +230,30 @@
 				</pluginRepository>
 			</pluginRepositories>
 		</profile>
-	</profiles>
+		
+        <profile>
+            <!-- When built in OpenShift the 'openshift' profile will be used when 
+                invoking mvn. -->
+            <!-- Use this profile for any OpenShift specific customization your app 
+                will need. -->
+            <!-- By default that is to put the resulting archive into the 'webapps' 
+                folder. -->
+            <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+            <id>openshift</id>
+            <build>
+                <finalName>test</finalName>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <configuration>
+                            <outputDirectory>webapps</outputDirectory>
+                            <warName>ROOT</warName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
