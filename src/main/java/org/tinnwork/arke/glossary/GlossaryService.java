@@ -16,8 +16,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 public class GlossaryService  implements Serializable{
@@ -62,8 +60,8 @@ public class GlossaryService  implements Serializable{
                     arrayList.add(glossaryTerm.clone());
                 }
             } catch (CloneNotSupportedException ex) {
-                Logger.getLogger(GlossaryService.class.getName()).log(
-                        Level.SEVERE, null, ex);
+               // Logger.getLogger(GlossaryService.class.getName()).log(
+               //         Level.SEVERE, null, ex);
             }
         }
         return arrayList;

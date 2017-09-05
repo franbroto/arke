@@ -7,6 +7,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 
+
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,8 +30,8 @@ import org.tinnwork.arke.subjects.SubjectService;
 import org.tinnwork.arke.subjects.SubjectView;
 
 
-
 @Theme("mytheme")
+@SuppressWarnings("serial")
 public class MainUI extends UI implements Serializable {
 
     public String currentScreen;
@@ -117,9 +118,8 @@ public class MainUI extends UI implements Serializable {
         }
     }
 
-   /*
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MainUI.class, productionMode = false)
     public static class MyUIServlet extends  VaadinServlet{
-    }*/
+    }
 }

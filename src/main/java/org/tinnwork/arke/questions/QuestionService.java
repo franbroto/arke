@@ -14,8 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 import static com.vaadin.ui.UI.getCurrent;
@@ -75,8 +74,8 @@ public class QuestionService implements Serializable{
                     questions.add(question.clone());
                 }
             } catch (CloneNotSupportedException ex) {
-                Logger.getLogger(QuestionService.class.getName()).log(
-                        Level.SEVERE, null, ex);
+                //Logger.getLogger(QuestionService.class.getName()).log(
+                //        Level.SEVERE, null, ex);
             }
         }
         return questions;
@@ -96,8 +95,8 @@ public class QuestionService implements Serializable{
                     arrayList.add(question.clone());
                 }
             } catch (CloneNotSupportedException ex) {
-                Logger.getLogger(QuestionService.class.getName()).log(
-                        Level.SEVERE, null, ex);
+                //Logger.getLogger(QuestionService.class.getName()).log(
+                //        Level.SEVERE, null, ex);
             }
         }
         return arrayList;

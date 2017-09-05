@@ -12,8 +12,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 import static com.vaadin.ui.UI.getCurrent;
@@ -83,8 +81,8 @@ public class SubjectService implements Serializable{
                     arrayList.add(subject.clone());
                 }
             } catch (CloneNotSupportedException ex) {
-                Logger.getLogger(SubjectService.class.getName()).log(
-                        Level.SEVERE, null, ex);
+                //Logger.getLogger(SubjectService.class.getName()).log(
+                 //       Level.SEVERE, null, ex);
             }
         }
         return arrayList;
