@@ -153,6 +153,7 @@
   <artifactId>exec-maven-plugin</artifactId>
   <version>1.2.1</version>
   <configuration>
+    <classpathScope>compile</classpathScope>
     <mainClass>com.vaadin.sass.SassCompiler</mainClass>
     <arguments>
       <argument>
@@ -163,6 +164,7 @@
   </configuration>
   <executions>
     <execution>
+     <phase>prepare-package</phase>
       <goals>
         <goal>java</goal>
       </goals>
