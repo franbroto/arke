@@ -74,7 +74,12 @@
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
 		
-		
+		<dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-theme-compiler</artifactId>
+      <version>7.1.15</version>
+      <scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
     			<artifactId>commons-beanutils</artifactId>
@@ -164,7 +169,7 @@
   </configuration>
   <executions>
     <execution>
-     <phase>prepare-package</phase>
+     <phase>generate-sources</phase>
       <goals>
         <goal>java</goal>
       </goals>

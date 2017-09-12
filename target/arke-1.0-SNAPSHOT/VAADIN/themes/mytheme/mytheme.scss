@@ -31,8 +31,253 @@
 
 @import "../valo/valo.scss";
 
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-webkit-keyframes movein {
+  from { left: -150px;
+        }
+  to   { left: 57px;
+        -webkit-transform: rotate(360deg);}
+}
+@keyframes movein {
+  from { left: -150px; }
+  to   { left: 57px;
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);}
+}
+
+
 @mixin mytheme {
   @include valo;
 
   // Insert your own theme rules here
+
+  .fadein{
+    @include animation(fadein 5s 0s);
+  }
+
+  .fadein-short{
+    @include animation(fadein 3s 0s);
+  }
+
+  .movein {
+    @include animation(movein 1.5s 0s);
+  }
+
+  .backColorBlue {
+    background-color: #70a5c9;
+  }
+
+  .test-padding .v-margin-top {
+    padding-top: 19px;
+  }
+
+  .jqplot-grid-canvas{
+    display: none;
+  }
+  .jqplot-yaxis {
+    display: none;
+  }
+
+  .question {
+    //display:inline;
+    font-size: 30px;
+    color:#1b548c;
+    font-style: italic;
+    text-align: justify;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    //border-bottom: 1px solid #1b548c;
+    //text-decoration: underline;
+    line-height: 60px;
+    white-space: normal;
+    font-weight: 500;
+    background-image: url("img/underline.png");
+  }
+
+  .time {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    background-image: url("img/time.png");
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin-top: -22px;
+    padding-top: 31px;
+  }
+
+  .numberofquestion {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    background-image: url("img/number.png");
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin-top: -22px;
+    padding-top: 31px;
+  }
+  
+  .shape {
+    position: absolute;
+    width: 50px;
+    margin-top: 23px;
+    margin-left: 20px;
+  }
+  .answer {
+    font-size: 26px;
+    color:#1b548c;
+    text-align: justify;
+    padding: 10px;
+    padding-left: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    line-height: 50px;
+    white-space: normal;
+    font-weight: 400;
+  }
+
+  .title{
+    margin-top: -0.5em;
+    padding-bottom: 0.5em;
+    font-size: 30px;
+    color: #1b548c;
+    border-bottom: 1px solid #1b548c;
+  }
+
+  .button {
+    height: 60px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .field {
+    height: 37px;
+    color: #1b548c;
+    font-size: 16px;
+    border: 1px solid #1b548c;
+    background-color: transparent;
+    background-image: none;
+    -webkit-box-shadow:none;
+  }
+
+  .back-button {
+    color: #1b548c;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .caption {
+    color: #1b548c;
+  }
+
+  .pin {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .grid-transparent {
+    color: #fff;
+    background: transparent;
+  }
+
+  .grid-transparent .v-grid-tablewrapper {
+    border: 0px solid #d4d4d4;
+  }
+
+  .grid-transparent .v-grid-header th {
+    border-bottom: 1px solid #1b548c;
+  }
+
+  .grid-transparent .v-grid-header .v-grid-cell {
+    background-color: transparent;
+    background-image: none;
+    display: none;
+  }
+
+  .grid-transparent  .v-grid-row-selected > .v-grid-cell {
+    background-color: transparent;
+  }
+
+  .grid-transparent .v-grid-row > td {
+    background-color: transparent;
+    //margin-top: 25px;
+  }
+  .grid-transparent .v-grid-row > th {
+    background-color: transparent;
+  }
+  .grid-transparent .v-grid-row-stripe > td {
+    background-color: transparent;
+  }
+
+  .grid-transparent .v-grid-row > td{
+    border-bottom: none;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .grid-transparent  .v-grid-editor-cells > div {
+    border-bottom: none;
+  }
+
+
+  .grid-transparent-small {
+    color: #1b548c;
+    background: transparent;
+  }
+
+  .grid-transparent-small .v-grid-tablewrapper {
+    border: 0px solid #d4d4d4;
+  }
+
+  .grid-transparent-small .v-grid-header th {
+    border-bottom: 1px solid #1b548c;
+  }
+
+  .grid-transparent-small .v-grid-header .v-grid-cell {
+    background-color: transparent;
+    background-image: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .grid-transparent-small .v-grid-row-selected > .v-grid-cell {
+    background-color: transparent;
+  }
+
+  .grid-transparent-small .v-grid-row > td {
+    background-color: transparent;
+    //margin-top: 25px;
+  }
+  .grid-transparent-small .v-grid-row > th {
+    background-color: transparent;
+  }
+  .grid-transparent-small .v-grid-row-stripe > td {
+    background-color: transparent;
+  }
+
+  .grid-transparent-small .v-grid-row > td{
+    border-bottom: none;
+    font-size: 16px;
+  }
+
+  .grid-transparent-small .v-grid-editor-cells > div {
+    border-bottom: none;
+  }
+
+
+
+
+
 }
